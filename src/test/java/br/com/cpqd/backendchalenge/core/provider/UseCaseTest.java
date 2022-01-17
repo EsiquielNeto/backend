@@ -3,6 +3,7 @@ package br.com.cpqd.backendchalenge.core.provider;
 
 import java.util.List;
 
+import br.com.cpqd.backendchalenge.core.domain.InformeDiarioTotal;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -28,6 +29,12 @@ public class UseCaseTest {
 
 		List<InformeDiario> all = pinheiroBoundary.getAll();
 		Assert.assertEquals(124080, all.size());
+	}
+
+	@Test
+	public void deveObterOSDadosInformeDiarioTotalDeCadaCNPJ() {
+		List<InformeDiarioTotal> total = pinheiroBoundary.getInformeDiarioTotalByCNPJ();
+		Assert.assertEquals(22874, total.size());
 	}
 
 
